@@ -41,7 +41,8 @@ public class CampaniaPublicitariaService implements ICampaniaPublicitariaService
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
+		data.deleteById(id);
+		
 		
 	}
 

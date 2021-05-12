@@ -15,7 +15,7 @@
 		<div class="col-sm-6">
 		
 <div class="card bg-ligth">
-<div class="card-header bg-dark text-while" th:text="*{nombre}"></div>
+<div class="card-header bg-dark text-while" th:text="${nombre}"></div>
 <div class="card-body">
 	<img class="img-thumbnail rounded float-left"
 	th:src="@{'images/' + *{image}}"
@@ -24,11 +24,12 @@
 
 </div>
 
+				
 
 </div>
 	
 	<ul class="list-group">
-	<li class="list-grup-item" th:text="'Nombre de la Campaña: '+*{nombre}"></li>
+	<li class="list-grup-item" th:text="' Nombre de la campania: '+${nombre}"></li>
 	<li class="list-grup-item" th:text="'Area de la Campaña: '+*{area}"></li>
 	<li class="list-grup-item" th:text="'Valor a pagar de la Campaña: '+*{valor}"></li>
 	<li class="list-grup-item" th:text="'Duracion de la Campaña: '+*{duracion}"></li>

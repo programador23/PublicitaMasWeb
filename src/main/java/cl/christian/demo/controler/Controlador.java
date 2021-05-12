@@ -91,9 +91,13 @@ public class Controlador {
 	//model.addAttribute("titulo", "Detalle de la Campaña "+ campaniapublicitaria);
 		model.addAttribute("campaniapublicitaria",campaniapublicitaria);
 		
+		return"VerDetalle";
 		//return"DetalleCampania";
-		return"DetalleCampania";
 	}
-	
+	@GetMapping("/eliminarcampania/{id}")
+	public String delete(Model model, @PathVariable int id) {
+		service.delete(id);
+		return "redirect:/ listar";
+	}
 	
 }
