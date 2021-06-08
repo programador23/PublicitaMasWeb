@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeLeaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Detalle Campaña</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -11,33 +11,41 @@
 
 </head>
 <body>
-	<div class="container mt-4">
-		<div class="col-sm-6">
+	<br>
+	<div class="container">
+	<div class="card bg-light">
+	<div class="card-header bg-warning text-center" th:text="${titulo}" >
 		
-<div class="card bg-ligth">
-<div class="card-header bg-dark text-while" th:text="${nombre}"></div>
-<div class="card-body">
-	<img class="img-thumbnail rounded float-left"
-	th:src="@{'images/' + *{image}}"
-	th:alt="error.jpg"
-	style="max-width:25%;">
-
-</div>
-
-				
-
-</div>
-	
-	<ul class="list-group">
-	<li class="list-grup-item" th:text="' Nombre de la campania: '+${nombre}"></li>
-	<li class="list-grup-item" th:text="'Area de la Campaña: '+*{area}"></li>
-	<li class="list-grup-item" th:text="'Valor a pagar de la Campaña: '+*{valor}"></li>
-	<li class="list-grup-item" th:text="'Duracion de la Campaña: '+*{duracion}"></li>
-	<li class="list-grup-item" th:text="'Descripcion de la Campaña: '+*{detalle}"></li>
-	</ul>
-	
-	
-		</div>
 	</div>
+	<div class="card-body">
+		<div   class="text-center">
+	<img class="img-thumbnail rounded"
+		th:src="@{'/images/' + ${campaniapublicitaria.image}}"
+		th:alt="Error en la imagen"	
+		style= "max-width:25%;">
+		</div>
+		<br>
+		<ul class="list-group">
+			
+		<li class="list-group-item" th:text="'ID		:		' + ${id}"></li>
+		<li class="list-group-item" th:text="'NOMBRE DE LA CAMPANIA		:		' +${campaniapublicitaria.nombre}"> </li>
+		<li class="list-group-item" th:text="'DURACION DE LA CAMPANIA		:		' +${campaniapublicitaria.duracion}"></li>
+		<li class="list-group-item" th:text="'AREA		:		' +${campaniapublicitaria.area}"></li>
+		<li class="list-group-item" th:text="'VALOR A PAGAR		:		' +${campaniapublicitaria.valor}"></li>
+		
+		
+		</ul>
+	</div>
+	<div class="card">
+	<div class="card-body ">
+		<h6 class="card-subtitle mb-2 text-muted">DETALLE</h6>
+		<p class="card-text" th:text="${campaniapublicitaria.detalle}"></p>
+	</div>
+	</div>
+	</div>
+		<br>
+	<a th:href="@{/postularcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning">Postular</a>
+</div>	
+
 </body>
 </html>

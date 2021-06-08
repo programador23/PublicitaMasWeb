@@ -10,26 +10,6 @@
 	crossorigin="anonymous">
 
 </head>
-<header>
-	<nav class="navbar navbar-expand-lg navbar-light bg-warning">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Publicita+(Administrador)</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="inicio.html">Inicio</a>
-        <a class="nav-link" href="/listar">Campanias Publicitarias</a>
-		  <a class="nav-link" href="/listacartel">Carteles Publicitarios</a>
-        
- 
-
-      </div>
-    </div>
-  </div>
-</nav>
-</header>
 
 <body>
 	<div class="container mt-4">
@@ -68,6 +48,7 @@
 					<td>
 				<a th:href="@{/modificarcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning">Modificar</a>
 				<a th:href="@{/eliminarcampania/}+${campaniapublicitaria.id}"Class="btn btn-warning">Eliminar</a>
+				<a th:href="@{detalle/}+${campaniapublicitaria.id}"Class="btn btn-warning">VerDetalle</a>
 				</tr>
 			</tbody>
 		</table>

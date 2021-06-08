@@ -5,10 +5,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import cl.christian.demo.interfaceService.ICampaniaPublicitariaService;
 import cl.christian.demo.interfaces.ICampaniaPublicitaria;
 import cl.christian.demo.modelo.CampaniaPublicitaria;
+
 
 @Service
 public class CampaniaPublicitariaService implements ICampaniaPublicitariaService{
@@ -21,22 +23,17 @@ public class CampaniaPublicitariaService implements ICampaniaPublicitariaService
 		return (List<CampaniaPublicitaria>)data.findAll();
 	}
 
-	@Override
-	public Optional<CampaniaPublicitaria> listarId(int id) {
-		
-		
-		return data.findById(id);
-	}
+
 
 	@Override
-	public int savecampania(CampaniaPublicitaria c) {
+	public void savecampania(CampaniaPublicitaria c) {
 		//guarda 
 		int res=0;
 		CampaniaPublicitaria campaniapublicitaria=data.save(c);
 		if(!campaniapublicitaria.equals(null)) {
 			res=1;
 		}
-		return 0;
+		return;
 	}
 
 	@Override
@@ -45,5 +42,43 @@ public class CampaniaPublicitariaService implements ICampaniaPublicitariaService
 		
 		
 	}
+
+
+	@Override
+	public List<CampaniaPublicitaria> BuscarPordusuario(String idusuario) {
+		// TODO Auto-generated method stub
+		return data.findByIdusuario(idusuario);
+	}
+
+
+
+	@Override
+	public List<CampaniaPublicitaria> findCampaniaPublicitariaById(int id) {
+		
+		return data.findCampaniaPublicitariaById(id);
+	}
+
+
+
+	@Override
+	public CampaniaPublicitaria listarId(int id) {
+		// TODO Auto-generated method stub
+		return data.findById(id).orElse(null);
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
 
 }
