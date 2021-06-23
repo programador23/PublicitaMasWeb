@@ -31,12 +31,9 @@
 			<tbody>
 				<tr th:each="campaniapublicitaria:${campaniapublicitaria}">
 
-					<th>
-						<a class="btn btn-info btn-xs"
-							th:href="@{detalle/}+${campaniapublicitaria.id}"
-							th:text="${campaniapublicitaria.id}">
-						</a>
-					</th>
+					
+							<td th:text="${campaniapublicitaria.id}"></td>
+						
 					
 					<td th:text="${campaniapublicitaria.idusuario}"></td>
 					<td th:text="${campaniapublicitaria.nombre}"></td>
